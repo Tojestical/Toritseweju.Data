@@ -4,4 +4,4 @@ I successfully identified key operational challenges, examined branch-specific c
 KEY FEATURES:
 Cleaned and tranformed messy data using Microsoft Excel
 visualized  sales performance dashboard.
-Analyzed Monthly Revenue, Menu Performance, Customers Spending, Employee and Location Performance, Stock Management and Customers Feedback.
+Analyzed Monthly Revenue, Product Performance, Menu Performance, Customers Spending, Employee and Location Performance, Stock Management and Customers Feedback.
