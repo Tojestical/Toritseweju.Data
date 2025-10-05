@@ -1,234 +1,73 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP (Modified by Toritseweju I. Mene)
--->
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Toritseweju I. Mene | Data Analytics Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toritseweju Data Portfolio</title>
+</head>
+<body>
 
-		<!-- Custom Styling -->
-		<style>
-			/* About Me Section */
-			#about-me {
-				max-width: 900px;
-				margin: 30px auto;
-				padding: 20px;
-				font-family: Arial, sans-serif;
-				background: rgba(255, 255, 255, 0.03);
-				border-radius: 12px;
-			}
-			.about-container {
-				display: flex;
-				flex-wrap: wrap;
-				align-items: center;
-				gap: 20px;
-				justify-content: center;
-			}
-			.profile-photo {
-				width: 200px;
-				height: 200px;
-				border-radius: 50%;
-				object-fit: cover;
-				box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-				flex: 0 0 200px;
-			}
-			.bio {
-				flex: 1 1 280px;
-				min-width: 260px;
-				color: #ddd;
-			}
-			.bio h2 {
-				margin-top: 0;
-				text-align: left;
-			}
+  <!-- Cover Image -->
+  <section id="cover">
+    <img src="https://raw.githubusercontent.com/Tojestical/Toritseweju.Data/main/images/ChatGPT%20Image%20Oct%204%2C%202025%2C%2001_58_30%20PM.png" 
+         alt="Choco Milky Cover" 
+         style="width:100%; height:auto;">
+    <h2>Choco Milky Sales Insights with Tableau</h2>
+    <p>
+      Choco Milky, a Belgium-based chocolate company operating across six European countries, 
+      struggled with underperforming regions, inconsistent delivery performance, and limited visibility into sales and customer behavior. 
+      Using Tableau, a consolidated dashboard was developed to provide a unified view of sales performance, delivery trends, and product profitability.
+    </p>
+  </section>
 
-			/* Filter Menu */
-			#project-menu {
-				text-align: center;
-				margin-bottom: 30px;
-			}
-			#project-menu .filter-btn {
-				background: #444;
-				color: #fff;
-				border: none;
-				padding: 10px 20px;
-				margin: 5px;
-				cursor: pointer;
-				border-radius: 6px;
-				transition: background 0.3s;
-			}
-			#project-menu .filter-btn:hover {
-				background: #666;
-			}
-			#project-menu .filter-btn.active {
-				background: #ff5c5c;
-			}
-		</style>
-	</head>
+  <!-- Filter Menu -->
+  <div id="project-menu" style="text-align:center; margin:20px 0;">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="powerbi">Power BI</button>
+    <button class="filter-btn" data-filter="excel">Excel</button>
+    <button class="filter-btn" data-filter="tableau">Tableau</button>
+  </div>
 
-	<body class="is-preload">
+  <!-- Projects -->
+  <section id="projects">
+    <article class="project-item" data-category="powerbi">
+      <h3>Power BI Dashboard</h3>
+      <p>Sales and performance insights created using Power BI.</p>
+    </article>
 
-		<!-- Wrapper -->
-		<div id="wrapper" class="fade-in">
+    <article class="project-item" data-category="excel">
+      <h3>Excel Report</h3>
+      <p>Automated report and performance analysis using Excel.</p>
+    </article>
 
-			<!-- Intro -->
-			<div id="intro">
-				<h1>TORITSEWEJU I. MENE<br />DATA ANALYTICS PORTFOLIO</h1>
+    <article class="project-item" data-category="tableau">
+      <h3>Tableau Visualization</h3>
+      <p>Interactive dashboard built with Tableau for Choco Milky.</p>
+    </article>
+  </section>
 
-				<!-- About Me Section -->
-				<section id="about-me">
-					<div class="about-container">
-						<img src="images/toritseweju mene.jpg" alt="Profile picture" class="profile-photo" />
-						<div class="bio">
-							<h2>About Me</h2>
-							<p>I am a Data Analyst skilled in transforming raw data into actionable insights that drive smarter business and financial decisions. Proficient in <b>SQL, Excel, Power BI, Tableau,</b> and <b>Microsoft Fabric</b>, I specialize in data wrangling, visualization, and business intelligence reporting to support strategic growth.</p>
-							<p>My experience includes financial data analysis, forecasting, and profitability evaluation, as well as statistical modeling, root cause identification, and predictive analytics. I excel at building clear dashboards and delivering data storytelling that empowers stakeholders to make informed decisions and align business strategies with performance goals.</p>
-						</div>
-					</div>
+  <script>
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const projects = document.querySelectorAll(".project-item");
 
-					<ul class="actions">
-						<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-					</ul>
-				</section>
-			</div>
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
 
-			<!-- Header -->
-			<header id="header">
-				<a href="index.html" class="logo">Major Projects</a>
-			</header>
+        const filter = btn.getAttribute("data-filter");
 
-			<!-- Nav -->
-			<nav id="nav">
-				<ul class="links">
-					<li class="active"><a href="index.html">Project Titles</a></li>
-				</ul>
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/in/toritsewejumene" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					<li><a href="https://github.com/Tojestical/Toritseweju.Data" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-				</ul>
-			</nav>
+        projects.forEach(project => {
+          const category = project.getAttribute("data-category");
+          if (filter === "all" || category === filter) {
+            project.style.display = "block";
+          } else {
+            project.style.display = "none";
+          }
+        });
+      });
+    });
+  </script>
 
-			<!-- Main -->
-			<div id="main">
-
-				<!-- Project Filter Menu -->
-				<div id="project-menu">
-					<button class="filter-btn active" data-filter="all">All</button>
-					<button class="filter-btn" data-filter="powerbi">Power BI</button>
-					<button class="filter-btn" data-filter="excel">Excel</button>
-					<button class="filter-btn" data-filter="tableau">Tableau</button>
-				</div>
-
-				<!-- Projects -->
-				<section class="posts">
-
-					<!-- Power BI -->
-					<article class="project-item" data-category="powerbi">
-						<header>
-							<h2>ARISE PHARMACEUTICAL PRODUCTS &amp; CUSTOMERS ANALYSIS</h2>
-						</header>
-						<a href="#" class="image fit"><img src="images/pharmacy store.png" alt="Pharmacy project" /></a>
-						<p>Analyzed pharmaceutical product performance across multiple countries to uncover insights on customer behavior, profitability, and product demand. Developed a Power BI dashboard that supported sales optimization and strategic decision-making.</p>
-						<ul class="actions special">
-							<li><a href="https://drive.google.com/file/d/15fkUlKM7m35mio-7QXMEPxazc90VKi5g/view" class="button" target="_blank">📄 View Report</a></li>
-							<li><a href="https://drive.google.com/file/d/1-QQDuebrrjXqktlin4ku6BJH0d_VoHQY/view" class="button" target="_blank">📊 View Dashboard</a></li>
-						</ul>
-					</article>
-
-					<!-- Excel -->
-					<article class="project-item" data-category="excel">
-						<header>
-							<h2>Yummy Bites Café — Business Performance Analysis</h2>
-						</header>
-						<a href="#" class="image fit"><img src="images/yummy bites cafe.png" alt="Yummy Bites Cafe" /></a>
-						<p>Analyzed performance across multiple branches of Yummy Bites Café, identifying customer trends, sales challenges, and growth opportunities. Provided recommendations for process optimization and improved profitability.</p>
-						<ul class="actions special">
-							<li><a href="https://drive.google.com/file/d/1ADtItyXnZTW0ci58K_rzK2uMEJB-o1_q/view" class="button" target="_blank">📄 View Report</a></li>
-							<li><a href="https://drive.google.com/file/d/1r3w-vR6Yke9jwyX8uvDB4B4m0-N2a7bu/view" class="button" target="_blank">📊 View Dashboard</a></li>
-						</ul>
-					</article>
-
-					<!-- Power BI -->
-					<article class="project-item" data-category="powerbi">
-						<header>
-							<h2>Best Way Office Supplies — Sales & Profitability Analysis</h2>
-						</header>
-						<a href="#" class="image fit"><img src="images/best way.png" alt="Best Way Office Supplies" /></a>
-						<p>Transformed $14.7M in sales data into interactive Power BI dashboards to identify high-profit areas, underperforming segments, and revenue opportunities, helping improve strategic resource allocation.</p>
-						<ul class="actions special">
-							<li><a href="https://drive.google.com/file/d/1_BKZz63FN8tW7lGYvkVRZuPQztDIwntM/view" class="button" target="_blank">📄 View Report</a></li>
-							<li><a href="https://drive.google.com/file/d/1A16m3-5SJzdNmxCnYWHvZOQlbTMsSKBr/view" class="button" target="_blank">📊 View Dashboard</a></li>
-						</ul>
-					</article>
-
-					<!-- Tableau -->
-					<article class="project-item" data-category="tableau">
-						<header>
-							<h2>Choco Milky — Sales Insights with Tableau</h2>
-						</header>
-						<a href="#" class="image fit"><img src="images/choco milky.png" alt="Choco Milky Project" /></a>
-						<p>Developed a Tableau dashboard for Choco Milky, a Belgium-based chocolate company. Provided a single view of sales, delivery, and profitability across six countries, supporting executive decision-making and operational improvement.</p>
-						<ul class="actions special">
-							<li><a href="https://drive.google.com/file/d/16O3KfzLfflWr-5leXTA6zsF4JE7Kwepj/view" class="button" target="_blank">📄 View Report</a></li>
-							<li><a href="https://drive.google.com/file/d/1wAY0NbngS62lsMIb6gcDj30ytUVWmG0G/view" class="button" target="_blank">📊 View Dashboard</a></li>
-						</ul>
-					</article>
-
-				</section>
-			</div>
-
-			<!-- Footer -->
-			<footer id="footer">
-				<section class="split contact">
-					<section>
-						<h3>Email</h3>
-						<p><a href="mailto:Toritsewejumene@gmail.com">Toritsewejumene@gmail.com</a></p>
-					</section>
-
-					<section>
-						<h3>Social</h3>
-						<ul class="icons alt">
-							<li><a href="https://www.linkedin.com/in/toritsewejumene" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/Tojestical/Toritseweju.Data" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</section>
-				</section>
-			</footer>
-
-			<div id="copyright">
-				<ul><li>&copy; 2025 Toritseweju I. Mene</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-			</div>
-		</div>
-
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
-		<!-- Project Filter Script -->
-		<script>
-			const filterButtons = document.querySelectorAll(".filter-btn");
-			const projects = document.querySelectorAll(".project-item");
-
-			filterButtons.forEach(button => {
-				button.addEventListener("click", () => {
-					filterButtons.forEach(btn => btn.classList.remove("active"));
-					button.classList.add("active");
-
-					const filter = button.getAttribute("data-filter");
-					projects.forEach(project => {
-						project.style.display = (filter === "all" || project.dataset.category === filter) ? "block" : "none";
-					});
-				});
-			});
-		</script>
-	</body>
+</body>
 </html>
